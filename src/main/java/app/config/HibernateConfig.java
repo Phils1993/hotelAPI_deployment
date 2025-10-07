@@ -34,8 +34,10 @@ public class HibernateConfig {
     }
 
     public static EntityManagerFactory getEntityManagerFactoryForTest() {
-        // Always create a new EMF for test runs
-        return createEMF(true);
+        if (emfTest == null || !emfTest.isOpen()) {
+            emfTest = createEMF(true);
+        }
+        return emfTest;
     }
 
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
