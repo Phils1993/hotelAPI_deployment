@@ -1,3 +1,5 @@
+package app;
+
 import app.config.ApplicationConfig;
 import app.config.HibernateConfig;
 import app.routes.HotelRoutes;
