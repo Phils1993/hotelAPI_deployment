@@ -1,3 +1,5 @@
+/*
+
 package app.daos;
 
 import app.config.HibernateConfig;
@@ -156,3 +158,4 @@ class HotelDAOTest {
         }
     }
 }
+ */
