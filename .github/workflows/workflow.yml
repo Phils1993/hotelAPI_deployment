@@ -3,7 +3,7 @@ name: CI/CD WORKFLOW for Hotel API
 
 on:
   push:
-    branches: [ Main ]
+    branches: [ main ]
 
 jobs:
   build:
