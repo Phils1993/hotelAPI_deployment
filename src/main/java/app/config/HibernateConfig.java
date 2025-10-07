@@ -34,8 +34,8 @@ public class HibernateConfig {
     }
 
     public static EntityManagerFactory getEntityManagerFactoryForTest() {
-        setTest(true);
-        return createEMF(true); // no caching
+        // Always create a new EMF for test runs
+        return createEMF(true);
     }
 
     // TODO: IMPORTANT: Add Entity classes here for them to be registered with Hibernate
