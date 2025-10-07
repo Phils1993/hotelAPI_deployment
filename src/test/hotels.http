@@ -1,0 +1,61 @@
+### ==========================================
+### HOTELS
+### ==========================================
+
+### Get all hotels
+GET http://{{url}}/hotel
+
+### Create a new hotel
+POST http://{{url}}/hotel
+Content-Type: application/json
+
+{
+  "hotelName": "Hotel California",
+  "hotelAddress": "Sunset Boulevard 42, Los Angeles"
+}
+
+### Get hotel by id
+GET http://{{url}}/hotel/1
+
+### Update hotel
+PUT http://{{url}}/hotel/3
+Content-Type: application/json
+
+{
+  "hotelName": "Hotel California Updated",
+  "hotelAddress": "Sunset Boulevard 42, Los Angeles"
+}
+
+### Delete hotel
+DELETE http://{{url}}/hotel/2
+
+### ==========================================
+### ROOMS (under specific hotel)
+### ==========================================
+
+### Get all rooms for a hotel
+GET http://{{url}}/hotel/1/rooms
+
+### Add a new room
+POST http://{{url}}/hotel/1/rooms
+Content-Type: application/json
+
+{
+  "roomNumber": 201,
+  "price": 200.0
+}
+
+### Get a specific room
+GET http://{{url}}/hotel/1/rooms/1
+
+### Update a specific room
+PUT http://{{url}}/hotel/1/rooms/1
+Content-Type: application/json
+
+{
+  "roomNumber": 202,
+  "price": 220.0
+}
+
+### Delete a specific room
+DELETE http://{{url}}/hotel/1/rooms/1
