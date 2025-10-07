@@ -255,4 +255,9 @@ public class SecurityController implements ISecurityController {
         return user.getRoles().stream()
                 .anyMatch(role -> allowedRoles.contains(role.toUpperCase()));
     }
+
+    // Health check for the API. Used in deployment
+    public void healthCheck(Context ctx) {
+        ctx.status(200).json("{\"msg\": \"API is up and running\"}");
+    }
 }

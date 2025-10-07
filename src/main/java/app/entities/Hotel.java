@@ -26,6 +26,7 @@ public class Hotel {
     private int hotelRooms;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "hotel", fetch = FetchType.EAGER,orphanRemoval = true)
+    @Builder.Default
     private Set<Room> rooms = new HashSet<>();
 
 
