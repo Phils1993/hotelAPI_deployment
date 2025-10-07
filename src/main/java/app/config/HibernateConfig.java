@@ -35,7 +35,8 @@ public class HibernateConfig {
 
     public static EntityManagerFactory getEntityManagerFactoryForTest() {
         if (emfTest == null || !emfTest.isOpen()) {
-            emfTest = createEMF(true);
+            setTest(true);
+            emfTest = createEMF(getTest());  // recreate factory if null or closed
         }
         return emfTest;
     }

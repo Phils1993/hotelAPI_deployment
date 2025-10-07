@@ -15,12 +15,13 @@ import static org.hamcrest.Matchers.*;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class HotelControllerTest {
 
-    private static final EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryForTest();
+    private static EntityManagerFactory emf = HibernateConfig.getEntityManagerFactoryForTest();
     private static int createdHotelId;
     public static ApplicationConfig appConfig = ApplicationConfig.getInstance();
 
     @BeforeAll
     static void setup() {
+        emf = HibernateConfig.getEntityManagerFactoryForTest();
         // TRUNCATE tables
         try (var em = emf.createEntityManager()) {
             em.getTransaction().begin();
@@ -45,7 +46,10 @@ class HotelControllerTest {
 
     @AfterAll
     static void tearDown() {
-        emf.close();
+        appConfig.stopServer();
+        if (emf != null && emf.isOpen()) {
+            emf.close();
+        }
     }
 
     @Test

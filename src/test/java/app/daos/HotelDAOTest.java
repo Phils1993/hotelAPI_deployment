@@ -1,18 +1,17 @@
-/*
 
 package app.daos;
 
 import app.config.HibernateConfig;
+import app.entities.Hotel;
+import app.entities.Room;
 import app.exceptions.ApiException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import org.junit.jupiter.api.*;
-import static org.junit.jupiter.api.Assertions.*;
-
-import app.entities.Hotel;
-import app.entities.Room;
 
 import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class HotelDAOTest {
@@ -41,8 +40,9 @@ class HotelDAOTest {
     static void tearDownAll() {
         if (emf != null && emf.isOpen()) {
             emf.close();
-            HibernateConfig.setTest(false); // optional: reset test mode
         }
+        emf = null; // so it can be re-created by next test class
+        HibernateConfig.setTest(false);
     }
 
     @Test
@@ -158,4 +158,4 @@ class HotelDAOTest {
         }
     }
 }
- */
+
