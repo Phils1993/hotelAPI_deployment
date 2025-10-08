@@ -28,7 +28,7 @@ public class Main {
                         get("/", ctx -> ctx.render("index.html"));
                     });
                 })
-                .startServer(7007)
+                .startServer(7070)
                 .setCORS()
                 .setGeneralExceptionHandling();
 
