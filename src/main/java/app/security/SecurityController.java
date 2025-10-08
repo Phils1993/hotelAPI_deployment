@@ -14,6 +14,7 @@ import dk.bugelhartmann.UserDTO;
 import dk.bugelhartmann.TokenSecurity;
 
 import java.text.ParseException;
+import java.util.Map;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -258,6 +259,6 @@ public class SecurityController implements ISecurityController {
 
     // Health check for the API. Used in deployment
     public void healthCheck(Context ctx) {
-        ctx.status(200).json("{\"msg\": \"API is up and running\"}");
+        ctx.status(200).json(Map.of("msg", "API is up and running")); // safe and proper
     }
 }
