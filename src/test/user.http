@@ -61,4 +61,4 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcIlBoaWxpcCBTdW5lIE5pbGF1c
 
 ### Admin demo (requires ADMIN role)
 GET http://{{url}}/protected/admin_demo
-Authorization: Bearer {{token}}
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJcInBoaWxpcDE5OTNcIiIsInN1YiI6IlBoaWxpcCBURVNUIiwiZXhwIjoxNzYxMjEzNzUxLCJyb2xlcyI6IlVzZXIiLCJ1c2VybmFtZSI6IlBoaWxpcCBURVNUIn0.XQcd1Kt65Mv7-hyhDpy1FxZwXg2Rn6HFv3UqcY_k5a0
